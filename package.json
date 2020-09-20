@@ -1,0 +1,10 @@
+{
+	"name": "literal-test",
+	"version": "1.0.0",
+	"scripts": {
+		"dev": "lite-server"
+	},
+	"devDependencies": {
+		"lite-server": "^2.5.4"
+	}
+}
