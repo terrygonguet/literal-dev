@@ -20,8 +20,9 @@ export default function Text(txt, { horizontalAlign = "left", verticalAlign = "t
 		if (verticalAlign == "center") {
 			const space = Math.max(height - totalHeight, 0)
 			// consume the starting height
-			while (curHeight++ <= Math.floor(space / 2)) {
+			while (curHeight < Math.floor(space / 2)) {
 				content += " ".repeat(width)
+				curHeight++
 			}
 		}
 
