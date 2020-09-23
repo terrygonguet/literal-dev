@@ -5,24 +5,12 @@ import Typewriter from "./components/Typewriter.js"
 import Split from "./components/Split.js"
 import literal from "./literal/index.js"
 import gameOfLife from "./components/GameOfLife.js"
+import Input from "./components/Input.js"
 
-literal("#app").then((mount) => mount(app()))
+literal("#app").then(mount => mount(app()))
 
 function app() {
-	return Split(
-		Clock({
-			weekday: "long",
-			year: "numeric",
-			month: "2-digit",
-			day: "2-digit",
-			hour: "2-digit",
-			minute: "2-digit",
-			second: "2-digit",
-			hour12: false,
-		}),
-		gameOfLife(),
-		{ separatorAt: 0 },
-	)
+	return Split(Input(), gameOfLife(), { separatorAt: 0 })
 }
 
 // const chars = "─│┌┐└┘├┤┬┴┼".split("")
