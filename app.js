@@ -6,7 +6,7 @@ import Split from "./components/Split.js"
 import literal from "./literal/index.js"
 import gameOfLife from "./components/GameOfLife.js"
 
-const mount = literal("#app").then(mount => mount(app()))
+literal("#app").then((mount) => mount(app()))
 
 function app() {
 	return Split(
