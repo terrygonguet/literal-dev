@@ -1,16 +1,15 @@
 import Border from "./components/Border.js"
-import Clock from "./components/Clock.js"
-import Text from "./components/Text.js"
-import Typewriter from "./components/Typewriter.js"
-import Split from "./components/Split.js"
-import literal from "./literal/index.js"
-import gameOfLife from "./components/GameOfLife.js"
 import Input from "./components/Input.js"
+import literal from "./literal/index.js"
 
 literal("#app").then(mount => mount(app()))
 
 function app() {
-	return Split(Input(), gameOfLife(), { separatorAt: 0 })
+	return Border({
+		title: "This is a text input test, please break it",
+		child: Input(),
+		padding: { vertical: 1, horizontal: 2 },
+	})
 }
 
 // const chars = "─│┌┐└┘├┤┬┴┼".split("")
