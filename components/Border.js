@@ -18,14 +18,14 @@ export default function Border({ title = "", padding = 1, child } = {}) {
 	const hpad = typeof padding == "number" ? padding : padding.horizontal
 	return function ({ width, height, registerChild }) {
 		const filler = child ? registerChild(child) : " "
-		if (title.length > width - 4) title = title.slice(0, width - 7) + "..."
-		const space = width - title.length - 4
+		const boundedTitle = title.length > width - 4 ? title.slice(0, width - 7) + "..." : title
+		const space = width - boundedTitle.length - 4
 		const left = Math.floor(space / 2),
 			right = Math.ceil(space / 2)
 		return (
 			"┌" +
 			"─".repeat(left) +
-			` ${title} ` +
+			` ${boundedTitle} ` +
 			"─".repeat(right) +
 			"┐" +
 			("│" + " ".repeat(width - 2) + "│").repeat(vpad) +
